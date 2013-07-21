@@ -24,8 +24,9 @@ include_recipe "modman"
 
 ATTENTION: name this cookbook "modman" if you want to use the LWRP like this:
 ```ruby
-modman "PATH TO YOUR MAGENTO ROOT" do
-	action :deployall
+modman "MODULENAME" do
+	path "/MAGENTO_ROOT"
+	action :clone
 end
 ```
 

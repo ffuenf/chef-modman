@@ -139,6 +139,72 @@ action :clean do
 	end
 end
 
+action :clone do
+	if @new_resource.exists
+		description = "clone #{@new_resource.module} into #{@new_resource.path}/.modman"
+		converge_by(description) do
+			command = "clone #{@new_resource.module}"
+			command << " --no-local" if @new_resource.nolocal
+			command << " --no-clean" if @new_resource.noclean
+		end
+	else
+		Chef::Log.info "#{ @current_resource } doesn't exist."
+	end
+end
+
+action :deploy do
+	if @new_resource.exists
+		description = "deploy #{@new_resource.module}"
+		converge_by(description) do
+			command = "deploy #{@new_resource.module}"
+			command << " --no-local" if @new_resource.nolocal
+			command << " --no-clean" if @new_resource.noclean
+		end
+	else
+		Chef::Log.info "#{ @current_resource } doesn't exist."
+	end
+end
+
+action :checkout do
+	if @new_resource.exists
+		description = "checkout #{@new_resource.module} into #{@new_resource.path}/.modman"
+		converge_by(description) do
+			command = "checkout #{@new_resource.module}"
+			command << " --no-local" if @new_resource.nolocal
+			command << " --no-clean" if @new_resource.noclean
+		end
+	else
+		Chef::Log.info "#{ @current_resource } doesn't exist."
+	end
+end
+
+action :hgclone do
+	if @new_resource.exists
+		description = "hgclone #{@new_resource.module} into #{@new_resource.path}/.modman"
+		converge_by(description) do
+			command = "hgclone #{@new_resource.module}"
+			command << " --no-local" if @new_resource.nolocal
+			command << " --no-clean" if @new_resource.noclean
+		end
+	else
+		Chef::Log.info "#{ @current_resource } doesn't exist."
+	end
+end
+
+action :link do
+	if @new_resource.exists
+		description = "link #{@new_resource.module} into #{@new_resource.path}/.modman"
+		converge_by(description) do
+			command = "link #{@new_resource.module}"
+			command << " --no-local" if @new_resource.nolocal
+			command << " --no-clean" if @new_resource.noclean
+		end
+	else
+		Chef::Log.info "#{ @current_resource } doesn't exist."
+	end
+end
+
+
 def modman(command, description)
 	command << " --force" if new_resource.force
 	script "modman: #{command}" do
