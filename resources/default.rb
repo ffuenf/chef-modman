@@ -7,5 +7,6 @@ attribute :basedir, :kind_of => String
 attribute :absolute, :kind_of => [ TrueClass, FalseClass ], :default => false
 attribute :nolocal, :kind_of => [ TrueClass, FalseClass ], :default => false
 attribute :noclean, :kind_of => [ TrueClass, FalseClass ], :default => false
+attribute :force, :kind_of => [ TrueClass, FalseClass ], :default => false
 
 attr_accessor :exists
