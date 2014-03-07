@@ -22,31 +22,6 @@ def whyrun_supported?
 	true
 end
 
-action :install do
-	unless @new_resource.exists
-		description = "install modman in #{node["modman"]["install_path"]}"
-		converge_by(description) do
-			src_filename = "modman"
-			src_filepath = "#{Chef::Config['file_cache_path']}/#{src_filename}"
-			remote_file src_filepath do
-				source node['modman']['url']
-				owner 'root'
-				group 'root'
-				mode 0755
-			end
-			bash 'install modman in #{node["modman"]["install_path"]}' do
-				cwd ::File.dirname(src_filepath)
-				code <<-EOH
-					mv #{src_filepath} #{node["modman"]["install_path"]}/#{src_filename}
-					chmod +x #{node["modman"]["install_path"]}/#{src_filename}
-				EOH
-			end
-		end
-	else
-		Chef::Log.info "#{ @current_resource } already exists."
-	end
-end
-
 action :init do
 	description = "initialize #{@new_resource.path} as the modman deploy root"
 	converge_by(description) do
