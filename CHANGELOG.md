@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of modman.
 
+## 2.1.0
+
+* update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
+* pin modman version (because newer versions break proper symlinking)
+
 ## 2.0.0:
 
 * move installation of modman from LWRP to default recipe

@@ -1,0 +1,22 @@
+---
+driver:
+  name: vagrant
+  driver_config:
+    require_chef_omnibus: latest
+
+provisioner:
+  name: chef_zero
+  solo_rb:
+    ssl_verify_mode: verify_peer
+
+platforms:
+- name: debian-7.6.0-amd64
+  driver_config:
+    box: debian-7.6.0-amd64
+    box_url: https://vagrantcloud.com/ffuenf/boxes/debian-7.6.0-amd64/versions/7/providers/virtualbox.box
+
+suites:
+- name: default
+  run_list:
+    - recipe[magerun::default]
+  attributes: {}

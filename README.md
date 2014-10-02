@@ -1,18 +1,36 @@
+chef-modman
+===========
+[![GitHub tag](http://img.shields.io/github/tag/ffuenf/chef-modman.svg)][tag]
+[![Build Status](http://img.shields.io/travis/ffuenf/chef-modman.svg)][travis]
+[![Gittip](http://img.shields.io/gittip/arosenhagen.svg)][gittip]
+
+[tag]: https://github.com/ffuenf/chef-modman/tags
+[travis]: https://travis-ci.org/ffuenf/chef-modman
+[gittip]: https://www.gittip.com/arosenhagen
+
+chef-modman installs [modman](https://github.com/colinmollenhour/modman) and provides access to a corresponding LWRP.
+
+Dependencies
+------------
+
+This cookbook has no direct dependencies.
+
+
 Description
 ===========
 
 Installs [modman](https://github.com/colinmollenhour/modman) and provides access to a corresponding LWRP.
 
-Requirements
-============
+Platform
+--------
 
-This Cookbook is only useful when dealing with [magento](http://www.magentocommerce.com/). Therefore you must have a complete magento installation running to use this cookbook and its associated LWRP.
+The following platforms are supported and tested:
 
-Attributes
-==========
+* Debian 6.x
+* Debian 7.x
+* Ubuntu 14.04.x
 
-* `node['modman']['url']` - default: 'https://raw.github.com/colinmollenhour/modman/master/modman'
-* `node['modman']['install_path']` - default: '/usr/local/bin'
+Other Debian family distributions are assumed to work.
 
 Usage
 =====
@@ -50,13 +68,44 @@ $ modman deploy-all
 
 Your commands will be run inside the Vagrant box.
 
+Development
+-----------
+1. Fork the repository from GitHub.
+2. Clone your fork to your local machine:
+
+        $ git clone git@github.com:USER/chef-modman.git
+
+3. Create a git branch
+
+        $ git checkout -b my_bug_fix
+
+4. **Write tests**
+5. Make your changes/patches/fixes, committing appropriately
+6. Run the tests: `rake style`, `rake spec`, `rake integration:vagrant`
+7. Push your changes to GitHub
+8. Open a Pull Request
+
+Testing
+-------
+
+The following Rake tasks are provided for automated testing of the cookbook:
+
+```
+$ rake -T
+rake spec                 # Run ChefSpec examples
+rake style                # Run all style checks
+rake style:chef           # Lint Chef cookbooks
+rake style:ruby           # Run Ruby style checks
+rake travis               # Run all tests on Travis
+```
+See TESTING.md for detailed information.
+
 License and Author
-==================
+------------------
 
-Author of modman:: Colin Mollenhour
-Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
+- Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-Copyright:: 2013, Achim Rosenhagen
+- Copyright:: 2014, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
