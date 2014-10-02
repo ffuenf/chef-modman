@@ -27,10 +27,10 @@ RSpec::Core::RakeTask.new(:spec)
 namespace :integration do
   desc 'Run Test Kitchen with Vagrant'
   task vagrant:
-    Kitchen.logger = Kitchen.default_file_logger
-    Kitchen::Config.new.instances.each do |instance|
-      instance.test(:always)
-    end
+  Kitchen.logger = Kitchen.default_file_logger
+  Kitchen::Config.new.instances.each do |instance|
+    instance.test(:always)
+  end
 end
 
 desc 'Run all tests on Travis'
