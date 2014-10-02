@@ -129,7 +129,7 @@ end
 
 def modman(command, description)
   command << ' --force' if new_resource.force
-  script "modman: #{command}" do
+  script "modman: #{description}" do
     interpreter 'bash'
     user 'root'
     cwd new_resource.path
