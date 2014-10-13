@@ -17,7 +17,7 @@ namespace :style do
 end
 
 desc 'Run all style checks'
-task style: %W('style:chef', 'style:ruby')
+task style: %w('style:chef', 'style:ruby')
 
 # Rspec and ChefSpec
 desc 'Run ChefSpec examples'
