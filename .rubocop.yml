@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - 'berks-cookbooks/**/*'
+    - 'Guardfile'
 
 UselessAssignment:
   Enabled: false
