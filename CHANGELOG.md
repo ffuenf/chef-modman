@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of modman.
 
+## 2.2.0
+
+* fix provider (missing modman call in all actions) thanks to Fantus
+
 ## 2.1.1
 
 * update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
