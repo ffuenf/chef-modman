@@ -147,7 +147,7 @@ def modman(command, description)
     user 'root'
     cwd new_resource.path
     code <<-EOF
-      modman #{command}
+      #{node['modman']['install_path']}/modman #{command}
     EOF
   end
 end

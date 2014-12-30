@@ -3,7 +3,6 @@ def abspath(f)
 end
 
 Vagrant.configure('2') do |config|
-
   # vagrant-omnibus
   if Vagrant.has_plugin?('vagrant-omnibus')
     config.omnibus.chef_version = :latest
