@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of modman.
 
+## 2.2.1:
+
+* update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
+* prepare for release on supermarket.chef.io
+
 ## 2.2.0
 
 * fix provider (missing modman call in all actions) thanks to Fantus
