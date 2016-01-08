@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of modman.
 
+## 2.2.2:
+
+* play nice with vagrant-cachier (see https://github.com/fgrehm/vagrant-cachier/issues/156)
+
 ## 2.2.1:
 
 * update/integrate testsuites: test-kitchen, foodcritic, rubocop, travis-ci
