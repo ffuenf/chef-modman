@@ -40,14 +40,10 @@ Vagrant.configure('2') do |config|
   # Configure Chef Solo provisioner
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'vendor/cookbooks'
-    # Load node attributes and run list from a JSON file
-    json_file =
-    if File.exist?(abspath('Vagrantfile.chef.json'))
-      abspath('Vagrantfile.chef.json')
-    end
-    chef.json = JSON.parse(IO.read(json_file))
-
-    # Configure Chef output
-    chef.custom_config_path = 'Vagrantfile.config'
+    chef.json = {
+      "run_list": [
+        "recipe[modman::default]"
+      ]
+    }
   end
 end

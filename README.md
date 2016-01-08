@@ -1,12 +1,14 @@
+<a href="http://www.ffuenf.de" title="ffuenf - code • design • e-commerce"><img src="https://github.com/ffuenf/Ffuenf_Common/blob/master/skin/adminhtml/default/default/ffuenf/ffuenf.png" alt="ffuenf - code • design • e-commerce" /></a>
+
 chef-modman
 ===========
 [![GitHub tag](http://img.shields.io/github/tag/ffuenf/chef-modman.svg)][tag]
 [![Build Status](http://img.shields.io/travis/ffuenf/chef-modman.svg)][travis]
-[![Gittip](http://img.shields.io/gittip/arosenhagen.svg)][gittip]
+[![PayPal Donate](https://img.shields.io/badge/paypal-donate-blue.svg)][paypal_donate]
 
 [tag]: https://github.com/ffuenf/chef-modman/tags
 [travis]: https://travis-ci.org/ffuenf/chef-modman
-[gittip]: https://www.gittip.com/arosenhagen
+[paypal_donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J2PQS2WLT2Y8W&item_name=Chef%3a%20chef-modman&item_number=chef-modman&currency_code=EUR
 
 chef-modman installs [modman](https://github.com/colinmollenhour/modman) and provides access to a corresponding LWRP.
 
@@ -105,7 +107,7 @@ License and Author
 
 - Author:: Achim Rosenhagen (<a.rosenhagen@ffuenf.de>)
 
-- Copyright:: 2014, ffuenf
+- Copyright:: 2016, ffuenf
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
