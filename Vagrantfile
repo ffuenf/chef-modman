@@ -1,7 +1,3 @@
-def abspath(f)
-  File.expand_path("../#{f}", __FILE__)
-end
-
 Vagrant.configure('2') do |config|
   # vagrant-omnibus
   if Vagrant.has_plugin?('vagrant-omnibus')
@@ -17,16 +13,15 @@ Vagrant.configure('2') do |config|
     config.cache.scope = :machine
     config.cache.synced_folder_opts = {
       type: :nfs,
-      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
+      mount_options: ['rw', 'tcp', 'nolock']
     }
-    config.cache.enable :generic, 'wget' => { cache_dir: '/var/cache/wget' }
   end
 
   # network
   config.vm.network 'private_network', ip: '10.0.0.50'
 
   # basebox
-  config.vm.box = 'ffuenf/debian-7.6.0-amd64'
+  config.vm.box = 'ffuenf/debian-7.9.0-amd64'
 
   # virtualbox options
   config.vm.provider 'virtualbox' do |v|
@@ -41,8 +36,8 @@ Vagrant.configure('2') do |config|
   config.vm.provision 'chef_solo' do |chef|
     chef.cookbooks_path = 'vendor/cookbooks'
     chef.json = {
-      "run_list": [
-        "recipe[modman::default]"
+      'run_list': [
+        'recipe[modman::default]'
       ]
     }
   end
